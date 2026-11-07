@@ -46,6 +46,16 @@ st.set_page_config(
 st.markdown(
     """
     <style>
+    /* Dark navy background (same on every device / browser theme) */
+    :root {color-scheme: dark;}
+    .stApp, [data-testid="stHeader"] {background-color: #0F172A; color: #F8FAFC;}
+    [data-testid="stMetricValue"], [data-testid="stMetricLabel"], [data-testid="stCaptionContainer"] {color: #F8FAFC;}
+    [data-testid="stSidebar"] {background-color: #111C33;}
+    .stApp textarea {background-color: #1E293B; color: #F8FAFC;}
+    .stApp p, .stApp label, .stApp span, .stApp h1, .stApp h2, .stApp h3 {color: #F8FAFC;}
+    div.stButton > button {background-color: #111C33; color: #F8FAFC; border: 1px solid rgba(255,255,255,0.25);}
+    div.stButton > button[kind="primary"] {background-color: #5B21F5; border-color: #5B21F5;}
+
     #MainMenu, footer {visibility: hidden;}
     .block-container {padding-top: 3rem; padding-bottom: 1rem; max-width: 1150px;}
     .hero {
