@@ -68,7 +68,17 @@ st.markdown(
         display: flex; align-items: center; justify-content: center; height: 105px; border-radius: 18px;
         border: 2px dashed rgba(255,255,255,0.22); opacity: 0.75; text-align: center; padding: 0 1rem;
     }
-    div.stButton > button {border-radius: 999px; font-weight: 600; width: 100%; min-height: 2.1rem; padding: 0.2rem 0.5rem;}
+    /* background: change the colors of this gradient to change the page color */
+    .stApp {background: linear-gradient(160deg, #0F172A 0%, #1E1B4B 55%, #312E81 100%);}
+    [data-testid="stHeader"] {background: transparent;}
+    /* buttons: full width inside their column */
+    div[data-testid="stButton"], div.stButton {width: 100% !important;}
+    div[data-testid="stButton"] > button, div.stButton > button {
+        width: 100% !important; border-radius: 999px; font-weight: 600; min-height: 2.1rem; padding: 0.2rem 0.5rem;
+    }
+    button[kind="primary"], button[data-testid="stBaseButton-primary"] {
+        background: linear-gradient(90deg, #8B5CF6, #EC4899) !important; border: none !important; color: white !important;
+    }
     </style>
     """,
     unsafe_allow_html=True,
