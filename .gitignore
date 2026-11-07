@@ -1,0 +1,6 @@
+venv/
+__pycache__/
+*.pyc
+emotion_model/
+emotion_out/
+.ipynb_checkpoints/
