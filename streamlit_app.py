@@ -48,6 +48,7 @@ st.markdown(
     <style>
     /* Dark navy background (same on every device / browser theme) */
     :root {color-scheme: dark;}
+    [data-testid="stVegaLiteChart"], [data-testid="stArrowVegaLiteChart"], .stVegaLiteChart {background: #0F172A;}
     .stApp, [data-testid="stHeader"] {background-color: #0F172A; color: #F8FAFC;}
     [data-testid="stMetricValue"], [data-testid="stMetricLabel"], [data-testid="stCaptionContainer"] {color: #F8FAFC;}
     [data-testid="stSidebar"] {background-color: #111C33;}
@@ -192,7 +193,10 @@ with right:
             alt.Chart(scores)
             .mark_bar(cornerRadiusTopRight=8, cornerRadiusBottomRight=8, size=20)
             .encode(
-                x=alt.X("confidence:Q", scale=alt.Scale(domain=[0, 1]), axis=alt.Axis(format="%", title=None)),
+                x=alt.X(
+                    "confidence:Q", scale=alt.Scale(domain=[0, 1.12]),
+                    axis=alt.Axis(format="%", title=None, values=[0, 0.2, 0.4, 0.6, 0.8, 1.0]),
+                ),
                 y=alt.Y("emotion:N", sort=list(scores["emotion"]), title=None),
                 color=alt.Color(
                     "emotion:N",
@@ -206,6 +210,16 @@ with right:
             text=alt.Text("confidence:Q", format=".0%"),
             color=alt.value("#F8FAFC"),
         )
-        st.altair_chart((bars + labels).properties(height=200))
+        chart = (
+            (bars + labels)
+            .properties(height=200, background="#0F172A")
+            .configure_view(strokeWidth=0, fill="#0F172A")
+            .configure_axis(
+                labelColor="#CBD5E1", labelFontSize=13,
+                gridColor="rgba(255,255,255,0.07)",
+                domainColor="rgba(255,255,255,0.15)", tickColor="rgba(255,255,255,0.15)",
+            )
+        )
+        st.altair_chart(chart, theme=None)
 
 st.caption("Student project · DistilBERT fine-tuned on GoEmotions · not a clinical or psychological tool")
