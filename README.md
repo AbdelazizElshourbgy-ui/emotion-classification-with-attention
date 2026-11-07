@@ -17,8 +17,8 @@ A text classifier that reads an English comment and predicts its emotion: **joy,
 ## 🌐 Links
 
 - 📓 **Training notebook on Kaggle:** [emotion-classification-with-attention](https://www.kaggle.com/code/abdelazizelshourbgy/emotion-classification-with-attention) 
-- 🚀 **Live demo:** [Streamlit app](https://your-app-name.streamlit.app/) 
-- 🤗 **Fine-tuned model on the Hugging Face Hub:** [Abd3laziz1/emotion-distilbert-goemotions](https://huggingface.co/Abd3laziz1/emotion-distilbert-goemotions) <!-- update this link -->
+- 🚀 **Live demo:** [Streamlit app](https://emotion-classification-with-attention0.streamlit.app/) 
+- 🤗 **Fine-tuned model on the Hugging Face Hub:** [Abd3laziz1/emotion-distilbert-goemotions](https://huggingface.co/Abd3laziz1/emotion-distilbert-goemotions) 
 
 ## 📸 Demo
 
